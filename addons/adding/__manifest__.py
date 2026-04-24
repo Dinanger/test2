@@ -1,11 +1,10 @@
 {
     "name": "adding extra fiel",
     "summary": "adding field",
-    "version": "2",
+    "version": "1.0",
     "depends": ["base", "sale"], 
     "installable": True,
     "data": [
-        "security/ir.model.access.csv",
-        "views/prueba_view.xml",
+        "views/prueba_view.xml"
     ],
 }

@@ -6,10 +6,9 @@
         <field name="arch" type="xml">
 
             <!-- Inserta el campo en el primer grupo del formulario -->
-            <xpath expr="//sheet//group" position="inside">
-                <field name="test"/>
-            </xpath>
-
+           <xpath expr="//field[@name='payment_term_id']" position="after">
+    <field name="test"/>
+</xpath>
         </field>
     </record>
 </odoo>
