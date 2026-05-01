@@ -1,5 +1,6 @@
 <odoo>
 
+    <!-- HERENCIA DEL FORMULARIO DE PRODUCTO -->
     <record id="view_product_form_inherit_stock_alert" model="ir.ui.view">
         <field name="name">product.template.stock.alert.form</field>
         <field name="model">product.template</field>
@@ -7,10 +8,12 @@
 
         <field name="arch" type="xml">
 
-            <!-- Insertar después de código de barras -->
-            <xpath expr="//field[@name='barcode']" position="after">
-                <field name="stock_minimo"/>
-                <field name="alerta_stock" readonly="1"/>
+            <!-- MÉTODO SEGURO: insertar dentro del formulario -->
+            <xpath expr="//sheet" position="inside">
+                <group string="Control de Stock">
+                    <field name="stock_minimo"/>
+                    <field name="alerta_stock" readonly="1"/>
+                </group>
             </xpath>
 
         </field>
