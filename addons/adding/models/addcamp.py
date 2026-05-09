@@ -1,11 +1,7 @@
 from odoo import models, fields, api
 
-class adz (models.Model):
-    
+class SaleOrder(models.Model):
     _inherit = 'sale.order'
-
-
-
-    test = fields.Char(string='prueba')
+    test = fields.Char(string='Prueba')
 
     

@@ -9,10 +9,11 @@ class ProductTemplate(models.Model):
     alerta_stock = fields.Boolean(
         string="Alerta de Stock",
         compute="_compute_alerta_stock",
-        store=True
+        store=False
     )
 
     @api.depends('qty_available', 'stock_minimo')
     def _compute_alerta_stock(self):
         for rec in self:
             rec.alerta_stock = rec.qty_available < rec.stock_minimo
+        
